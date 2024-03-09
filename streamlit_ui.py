@@ -2,10 +2,7 @@ import streamlit as st
 import google.generativeai as genai
 from dotenv import load_dotenv, find_dotenv
 
-PROMPT = """
-SYSTEM MESSAGE: You are a chatbot designed to assist users with their queries about the weather in different cities around the world. User will ask you about this information. Your job is to help them.
-START OF CHAT: Now introduce yourself.
-"""
+
 
 # Initialize Gemini-Pro 
 load_dotenv(find_dotenv())
@@ -22,10 +19,9 @@ def role_to_streamlit(role):
 # Add a Gemini Chat history object to Streamlit session state
 if "chat" not in st.session_state:
     st.session_state.chat = model.start_chat(history = [])
-    st.session_state.chat.send_message(PROMPT)
 
 # Display Form Title
-st.title("Chat with Google Gemini-Pro!")
+st.title("Chat with Google Gemini-1.0-Pro!")
 
 # Display chat messages from history above current input box
 for message in st.session_state.chat.history[1:]:
