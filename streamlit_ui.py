@@ -3,7 +3,6 @@ import google.generativeai as genai
 from dotenv import load_dotenv, find_dotenv
 
 
-
 # Initialize Gemini-Pro 
 load_dotenv(find_dotenv())
 genai.configure()
